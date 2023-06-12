@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- The title of the page -->
+    <title>
+        <%=title%> 
+    </title>
+    <meta charset="UTF-8" lang="en" /> <!-- Character encoding and language -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive viewport settings -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet" /> <!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/e7ebc2fc39.js" crossorigin="anonymous"></script> <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="/css/home.css"> <!-- External CSS file -->
+</head>
+
+<body>
+    <header>
+        <h1>Todo List</h1> <!-- Heading for the page -->
+    </header>
+
+    <form action="/add-todo-list" method="POST"> <!-- Form for adding a new todo list item -->
+        <input type="text" name="todo_desc" class="todo-input" maxlength="40" placeholder="Pending Task?!" required/> <!-- Input field for the todo description -->
+        <div class="select">
+            <select name="todo_label" class="filter-todo"> <!-- Select field for choosing the todo label -->
+                <option value="personal">Personal</option>
+                <option value="office">Office</option>
+                <option value="wishlist">Wish List</option>
+            </select>
+        </div>
+        <input type="date" name="todo_date" class="todo-input" required/> <!-- The input type is set to "date" to create a date picker. -->
+        <button class="todo-button" type="submit">
+            <i class="fas fa-plus-square"></i> <!-- Button for adding a new todo item -->
+        </button>
+    </form>
+
+    <div class="todo-container">
+        <ul class="todo-list">
+            <% for (let i of todolists){ %> <!-- Loop over the todolists array to display each item -->
+            <div class="todo">
+                <li class="todo-item"><%=i.desc%></li> <!-- Display the todo description -->
+                <li class="todo-item"> - <%=i.label%></li> <!-- Display the todo label -->
+                <li class="todo-item"> - <%=i.date%></li> <!--Display the todo date-->
+                <a href="/delete-todo-list/?id=<%=i._id%>"><button class="trash-btn"><i class="fas fa-trash"
+                            aria-hidden="true"></i></button></a> <!-- Button for deleting the todo item -->
+            </div>
+            <%}%>
+        </ul>
+    </div>
+</body>
+
+</html>

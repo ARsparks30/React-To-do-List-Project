@@ -1,0 +1,179 @@
+* {
+    scroll-behavior: smooth; /* Smooth scrolling behavior for all elements */
+    font-family: "Poppins", sans-serif; /* Font family for all elements */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Box sizing to include padding and borders in element sizes */
+}
+
+*:focus,
+*:active {
+    outline: 0 !important; /* Remove outline on focus or active state */
+    box-shadow: 0 !important; /* Remove box shadow on focus or active state */
+}
+
+body {
+    /* Body styles */
+    background: rgb(68, 100, 173); /* Background color with gradient */
+    color: white; /* Text color */
+    min-height: 100vh; /* Minimum height of the viewport */
+    margin-bottom: 2rem; /* Bottom margin */
+}
+
+header {
+    /* Header styles */
+    text-shadow: 2px 2px 15px rgb(176, 230, 255); /* Text shadow effect */
+    font-size: 1.2rem; /* Font size */
+}
+
+header,
+form {
+    /* Header and form container styles */
+    min-height: 25vh; /* Minimum height of header and form container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input,
+form button {
+    /* Form input and button styles */
+    padding: 0.5rem 0.5rem 0.5rem 1rem; /* Padding */
+    font-size: 1.8rem; /* Font size */
+    border: none; /* Remove border */
+    background: #f4f4f4; /* Background color */
+}
+
+form button {
+    /* Form button styles */
+    padding: 0.5rem 1rem; /* Padding */
+    color: rgba(74, 21, 110, 1); /* Text color */
+    background: white; /* Background color */
+    cursor: pointer; /* Cursor style */
+    transition: all 0.3s ease; /* Transition effect */
+}
+
+form button:hover {
+    /* Hover state for form button */
+    background: rgba(74, 21, 110, 1);
+    color: white;
+}
+
+.todo-container {
+    /* Todo container styles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list {
+    /* Todo list styles */
+    min-width: 63%; /* Minimum width of todo list */
+    list-style: none; /* Remove default list styles */
+}
+
+.todo {
+    /* Todo item styles */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem; /* Margin */
+    background: white; /* Background color */
+    font-size: 1.5rem; /* Font size */
+    transition: all 0.5s ease; /* Transition effect */
+}
+
+form input,
+.todo {
+    color: rgb(88, 87, 87); /* Text color for form inputs and todo items */
+}
+
+.todo li {
+    flex: 1; /* Flex property to distribute remaining space evenly among todo list items */
+}
+
+.trash-btn,
+.check-btn {
+    background-color: rgba(74, 21, 110, 1); /* Background color for trash and check buttons */
+    color: white; /* Text color for trash and check buttons */
+    border: none; /* Remove border */
+    padding: 1rem; /* Padding */
+    cursor: pointer; /* Cursor style */
+    font-size: 1.2rem; /* Font size */
+    transition: 0.2s all ease; /* Transition effect */
+}
+
+.check-btn {
+    background-color: rgba(68, 100, 173, 1); /* Background color for check button */
+}
+
+.check-btn:hover {
+    background-color: rgba(68, 100, 173, 1); /* Hover state for check button */
+    color: white; /* Text color on hover */
+}
+
+.trash-btn:hover {
+    color: white; /* Text color on hover */
+    background-color: rgba(74, 21, 110, 1); /* Hover state for trash button */
+}
+
+.todo-item {
+    padding: 0rem 1.2rem; /* Padding for todo items */
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none; /* Disable pointer events for trash and check icons */
+}
+
+.completed {
+    opacity: 0.6; /* Opacity for completed todo items */
+    text-decoration: line-through; /* Text decoration for completed todo items */
+}
+
+.fall {
+    animation: fall-apart 0.5s ease-out; /* Animation effect */
+}
+
+@keyframes fall-apart {
+    100% {
+        transform: rotateZ(20deg) translateY(8rem);
+        opacity: 0;
+    }
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    font-size: 1.2em; /* Font size for select dropdown */
+    color: rgba(74, 21, 110, 1); /* Text color for select dropdown */
+    width: 15rem; /* Width of select dropdown */
+    cursor: pointer; /* Cursor style */
+    padding: 1rem; /* Padding */
+}
+
+.select {
+    margin: 1rem; /* Margin */
+    position: relative;
+    overflow: hidden;
+}
+
+.select::after {
+    content: "\25BC"; /* Display a down arrow using CSS content */
+    position: absolute;
+    background: rgba(74, 21, 110, 1); /* Background color for select dropdown arrow */
+    top: 0;
+    right: 0;
+    padding: 1.2rem; /* Padding */
+    pointer-events: none; /* Disable pointer events */
+    transition: all 0.3s ease; /* Transition effect */
+}
+
+.select:hover::after {
+    background-color: white; /* Hover state for select dropdown arrow */
+    color: rgba(74, 21, 110, 1); /* Text color on hover */
+}
+
